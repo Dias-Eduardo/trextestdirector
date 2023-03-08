@@ -22,8 +22,8 @@ class DefaultProfile(TrexStlProfile):
             "pkt_data": "X",
             "pkt_size": 64,
             "pps": 1000,
-            "src_ip": "192.168.65.4",
-            "dst_ip": "192.168.65.5",
+            "src_ip": "192.168.70.2",
+            "dst_ip": "192.168.70.3",
         }
 
     def create_streams(self):

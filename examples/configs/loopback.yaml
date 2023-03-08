@@ -1,26 +1,26 @@
 servers:
-  - name: trex_server
-    management_ip: 127.0.0.1
+  - name: transmitter
+    management_ip: 192.168.70.2
     ports:
       - id: 0
-        ip: 192.168.65.4
-        default_gateway: 192.168.65.1
-        service_mode: true
-        attributes:
-          promiscuous: true
+        ip: 192.168.70.3
+        default_gateway: 192.168.70.1
+
+  - name: receiver
+    management_ip: 192.168.70.3
+    ports:
       - id: 1
-        ip: 192.168.65.5
-        default_gateway: 192.168.65.1
-        service_mode: true
-        attributes:
-          promiscuous: true
+        ip: 192.168.70.2
+        default_gateway: 192.168.70.1
 
 tests:
   - name: loopback_test
-    duration: 10
+    duration: 5
     transmit:
-      - from: trex_server:0
-        to: trex_server:1
+      - from: transmitter:0
+        to: receiver:1
         profile_file: examples/profiles/latency_profile.py
-        tunables:
-          pps: 100000
+#        tunables:
+#          pps: 10000
+#          flow_stats: stats
+#          flow_stats_pg_id: 10

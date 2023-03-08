@@ -21,9 +21,9 @@ class LatencyProfile(TrexStlProfile):
         self.tunables = {
             "pkt_data": "X",
             "pkt_size": 64,
-            "pps": 5000,
-            "src_ip": "192.168.65.5",
-            "dst_ip": "192.168.65.4",
+            "pps": 1000,
+            "src_ip": "192.168.70.2",
+            "dst_ip": "192.168.70.3",
             "flow_stats": "latency",
             "flow_stats_pps": 10,
             "flow_stats_pg_id": 0,
